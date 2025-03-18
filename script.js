@@ -1,87 +1,919 @@
-let currentQuestionIndex = 0, questions = [];
-const fileInput = document.getElementById('file-input');
-const startQuizButton = document.getElementById('start-quiz');
-const quizContainer = document.getElementById('quiz-container');
-const checkAnswersButton = document.getElementById('check-answers');
-const nextQuestionButton = document.getElementById('next-question');
-const quizTitle = document.getElementById('quiz-title'); // Reference to the quiz title
 
-fileInput.addEventListener('change', function (event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            try {
-                questions = JSON.parse(e.target.result);
-                if (questions.length) {
-                    startQuizButton.style.display = 'inline-block';
-                    // Update the quiz title with the file name (without .json extension)
-                    const fileName = file.name.replace('.json', '');
-                    quizTitle.textContent = fileName;
-                }
-            } catch (error) {
-                alert("Invalid JSON file format");
-            }
-        };
-        reader.readAsText(file);
-    }
-});
 
-startQuizButton.addEventListener('click', function () {
-    if (questions.length) {
-        renderQuestions(questions);
-        showQuestion(currentQuestionIndex);
-        checkAnswersButton.style.display = 'inline-block'; // Show Check Answers button
-        startQuizButton.style.display = 'none';
-    }
-});
+    const quizzes = {
+        quiz1: [
+{
+"question": "Quelle est la relation correcte entre la fréquence (ν), la longueur d’onde (λ) et la vitesse de la lumière (c) en spectroscopie?",
+"options": [
+  "a) ν = c × λ",
+  "b) λ = c / ν",
+  "c) σ = c × λ",
+  "d) ν = λ / c",
+  "e) c = ν × σ"
+],
+"rightPropositions": [1],
+"explanation": "La fréquence ν est donnée par ν = c / λ, où c est la vitesse de la lumière. (p.1)"
+},
+{
+"question": "Quel facteur distingue principalement les rayons X des micro-ondes?",
+"options": [
+  "a) Leur capacité à être absorbés par l’ozone",
+  "b) Leur énergie plus faible permettant une meilleure transmission à travers les solides",
+  "c) Leur différence de fréquence et de longueur d’onde",
+  "d) Leur utilisation limitée aux applications médicales",
+  "e) Leur capacité à induire des transitions vibrationnelles"
+],
+"rightPropositions": [2],
+"explanation": "Les rayons X et les micro-ondes diffèrent principalement par leur fréquence et leur longueur d’onde. (p.2)"
+},
+{
+"question": "Pourquoi l’absorption dans l’ultraviolet peut-elle induire la dissociation d’une molécule?",
+"options": [
+  "a) Parce qu’elle entraîne une augmentation de la température du milieu",
+  "b) Parce que l’énergie des photons UV est suffisante pour rompre certaines liaisons chimiques",
+  "c) Parce qu’elle affecte principalement les états rotationnels et vibrationnels",
+  "d) Parce que la fluorescence est une conséquence directe de la dissociation",
+  "e) Parce que les photons UV possèdent une énergie inférieure à celle des photons IR"
+],
+"rightPropositions": [1],
+"explanation": "L’absorption UV correspond à des énergies pouvant atteindre 600 kJ/mol, suffisantes pour rompre des liaisons chimiques. (p.5)"
+},
+{
+"question": "Quelle caractéristique des lasers est essentielle pour leurs applications en spectroscopie?",
+"options": [
+  "a) Leur émission polychromatique",
+  "b) Leur capacité à couvrir l’ensemble du spectre visible",
+  "c) Leur cohérence et monochromaticité",
+  "d) Leur faible intensité évitant l’excitation moléculaire",
+  "e) Leur dispersion dans un large spectre électromagnétique"
+],
+"rightPropositions": [2],
+"explanation": "Les lasers sont des sources cohérentes et monochromatiques, idéales pour de nombreuses applications spectroscopiques. (p.3)"
+},
+{
+"question": "Quel domaine spectral est principalement utilisé pour l’analyse des vibrations moléculaires?",
+"options": [
+  "a) UV-Visible",
+  "b) Rayons X",
+  "c) Infrarouge",
+  "d) Micro-ondes",
+  "e) Ondes radio"
+],
+"rightPropositions": [2],
+"explanation": "L’analyse des vibrations moléculaires se fait principalement dans l’infrarouge. (p.3)"
+},
+{
+"question": "Quelle différence fondamentale distingue la spectroscopie Raman de la spectroscopie infrarouge?",
+"options": [
+  "a) La spectroscopie Raman repose sur une absorption totale de l’énergie lumineuse",
+  "b) La spectroscopie infrarouge ne dépend pas des changements de polarisabilité moléculaire",
+  "c) La spectroscopie Raman est basée sur la diffusion inélastique de la lumière",
+  "d) La spectroscopie infrarouge ne détecte que les vibrations asymétriques",
+  "e) La spectroscopie Raman utilise exclusivement des sources thermiques"
+],
+"rightPropositions": [2],
+"explanation": "La spectroscopie Raman repose sur la diffusion inélastique de la lumière, contrairement à la spectroscopie IR. (p.4)"
+},
+{
+"question": "Quel phénomène caractérise un spectre d’émission atomique?",
+"options": [
+  "a) Une absorption d’énergie entraînant des transitions vibrationnelles",
+  "b) Une émission de lumière suite à un retour à l’état fondamental",
+  "c) Une diffraction de la lumière sur un prisme optique",
+  "d) Une réflexion totale interne des ondes électromagnétiques",
+  "e) Une dispersion due aux interactions électron-noyau"
+],
+"rightPropositions": [1],
+"explanation": "Un spectre d’émission est produit lorsque les atomes excités reviennent à leur état fondamental en émettant de la lumière. (p.3)"
+},
+{
+"question": "Pourquoi les spectres de fluorescence et de phosphorescence sont-ils qualifiés de spectres d’émission?",
+"options": [
+  "a) Car ils impliquent l’absorption de lumière dans l’infrarouge",
+  "b) Car ils résultent de la relaxation d’un état excité avec émission de photons",
+  "c) Car ils nécessitent une source de chaleur pour exciter les électrons",
+  "d) Car ils sont détectables uniquement dans le domaine UV-Visible",
+  "e) Car ils impliquent uniquement des transitions rotationnelles"
+],
+"rightPropositions": [1],
+"explanation": "La fluorescence et la phosphorescence résultent de l’émission de lumière par des molécules excitées. (p.4)"
+},
+{
+"question": "Quelle condition est nécessaire pour qu’une molécule puisse absorber une radiation électromagnétique?",
+"options": [
+  "a) L’énergie du photon doit être inférieure à l’énergie de l’état excité",
+  "b) L’énergie du photon doit correspondre exactement à la différence entre deux niveaux d’énergie moléculaires",
+  "c) La molécule doit être chargée électriquement",
+  "d) La molécule doit être placée sous vide pour minimiser l’interférence",
+  "e) L’absorption ne peut se produire que dans l’ultraviolet et le visible"
+],
+"rightPropositions": [1],
+"explanation": "Une molécule absorbe une radiation si l’énergie du photon correspond exactement à la différence entre deux niveaux d’énergie. (p.3)"
+},
+{
+"question": "Quel rôle joue un monochromateur dans un spectrophotomètre?",
+"options": [
+  "a) Il amplifie l’intensité de la lumière absorbée",
+  "b) Il sélectionne une longueur d’onde spécifique à partir d’un spectre polychromatique",
+  "c) Il convertit la lumière en un signal électrique mesurable",
+  "d) Il maintient la température de l’échantillon constante",
+  "e) Il détecte les variations de fluorescence des molécules en solution"
+],
+"rightPropositions": [1],
+"explanation": "Un monochromateur sert à sélectionner une longueur d’onde spécifique d’un spectre polychromatique. (p.5)"
+},
+{
+"question": "Quels types de transitions sont observés dans les spectres d’absorption moléculaire?",
+"options": [
+  "a) Rotationnelles, vibrationnelles et électroniques",
+  "b) Rotationnelles uniquement",
+  "c) Électroniques uniquement",
+  "d) Phosphorescentes uniquement",
+  "e) Infra-sonores et ultra-sonores"
+],
+"rightPropositions": [0],
+"explanation": "Les spectres d’absorption moléculaire impliquent des transitions rotationnelles, vibrationnelles et électroniques. (p.4)"
+}
+]
+,
+        quiz2: [
+{
+"question": "Quels paramètres influencent directement l’absorbance mesurée en spectroscopie UV-Visible?",
+"options": [
+  "a) La concentration de l’échantillon",
+  "b) L’épaisseur de la cuve",
+  "c) La température du solvant",
+  "d) L’intensité de la source lumineuse",
+  "e) La présence d’impuretés dans l’échantillon"
+],
+"rightPropositions": [0, 1, 4],
+"explanation": "L’absorbance est influencée par la concentration de l’échantillon, l’épaisseur de la cuve et la présence d’impuretés. (p.5)"
+},
+{
+"question": "Pourquoi la loi de Beer-Lambert peut-elle devenir non linéaire?",
+"options": [
+  "a) À cause d’interactions moléculaires dans des solutions concentrées",
+  "b) Si la lumière utilisée n’est pas monochromatique",
+  "c) Si l’échantillon est trop dilué",
+  "d) Si le solvant absorbe dans la même région que l’analyte",
+  "e) Si le détecteur est saturé par une trop forte intensité lumineuse"
+],
+"rightPropositions": [0, 1, 3, 4],
+"explanation": "Des interactions moléculaires, l’utilisation d’une lumière polychromatique, l’absorption du solvant et la saturation du détecteur peuvent rendre la loi de Beer-Lambert non linéaire. (p.5)"
+},
+{
+"question": "Quels sont les principaux types de transitions électroniques en spectroscopie UV-Visible?",
+"options": [
+  "a) π → π*",
+  "b) n → π*",
+  "c) d → d",
+  "d) σ → σ*",
+  "e) v → v (vibrationnelle)"
+],
+"rightPropositions": [0, 1, 2, 3],
+"explanation": "Les transitions électroniques observées en UV-Visible incluent π → π*, n → π*, d → d et σ → σ*. (p.7)"
+},
+{
+"question": "Quels effets peuvent influencer la position et l’intensité d’une bande d’absorption UV-Visible?",
+"options": [
+  "a) La conjugaison des doubles liaisons",
+  "b) L’effet bathochrome",
+  "c) L’effet hypsochrome",
+  "d) La concentration de l’échantillon",
+  "e) Le type de solvant utilisé"
+],
+"rightPropositions": [0, 1, 2, 4],
+"explanation": "La conjugaison des doubles liaisons, les effets bathochrome et hypsochrome ainsi que le solvant influencent l’absorption UV-Visible. (p.9)"
+},
+{
+"question": "Quels rôles joue un monochromateur dans un spectrophotomètre?",
+"options": [
+  "a) Sélectionner une longueur d’onde spécifique",
+  "b) Convertir la lumière en signal électrique",
+  "c) Filtrer la lumière parasite",
+  "d) Améliorer la résolution spectrale",
+  "e) Augmenter l’intensité de l’absorbance mesurée"
+],
+"rightPropositions": [0, 2, 3],
+"explanation": "Un monochromateur sélectionne une longueur d’onde, filtre la lumière parasite et améliore la résolution spectrale. (p.12)"
+},
+{
+"question": "Pourquoi les solvants polaires influencent-ils les bandes d’absorption UV-Visible?",
+"options": [
+  "a) Ils stabilisent les états électroniques par solvatation",
+  "b) Ils provoquent un effet bathochrome sur les transitions π → π*",
+  "c) Ils déplacent les transitions n → π* vers les courtes longueurs d’onde (effet hypsochrome)",
+  "d) Ils réduisent l’intensité d’absorption",
+  "e) Ils augmentent systématiquement la largeur des bandes"
+],
+"rightPropositions": [0, 1, 2],
+"explanation": "Les solvants polaires stabilisent les états électroniques, provoquent un effet bathochrome sur les transitions π → π* et un effet hypsochrome sur les transitions n → π*. (p.10)"
+},
+{
+"question": "Quels types de détecteurs sont couramment utilisés en spectrophotométrie UV-Visible?",
+"options": [
+  "a) Tube photomultiplicateur",
+  "b) Photodiode",
+  "c) Détecteur infrarouge",
+  "d) Barrette de diodes",
+  "e) Spectromètre de masse"
+],
+"rightPropositions": [0, 1, 3],
+"explanation": "Les tubes photomultiplicateurs, les photodiodes et les barrettes de diodes sont utilisés pour détecter les signaux en spectrophotométrie UV-Visible. (p.12)"
+},
+{
+"question": "Quels sont les avantages des spectrophotomètres à double faisceau?",
+"options": [
+  "a) Ils compensent les variations d’intensité de la source lumineuse",
+  "b) Ils éliminent complètement le bruit de fond",
+  "c) Ils permettent une comparaison en temps réel entre l’échantillon et la référence",
+  "d) Ils nécessitent une calibration plus fréquente",
+  "e) Ils mesurent simultanément plusieurs longueurs d’onde"
+],
+"rightPropositions": [0, 2],
+"explanation": "Les spectrophotomètres à double faisceau compensent les variations d’intensité lumineuse et permettent une comparaison en temps réel avec la référence. (p.14)"
+},
+{
+"question": "Quels critères doivent être respectés pour mesurer correctement une absorbance?",
+"options": [
+  "a) Utiliser une lumière monochromatique",
+  "b) Travailler avec des solutions diluées",
+  "c) Employer une cuve transparente dans le domaine spectral étudié",
+  "d) Utiliser un solvant absorbant fortement la lumière UV",
+  "e) Éviter les bulles et impuretés dans la cuve"
+],
+"rightPropositions": [0, 1, 2, 4],
+"explanation": "Pour obtenir une mesure précise, il faut utiliser une lumière monochromatique, travailler avec des solutions diluées, employer une cuve adaptée et éviter les impuretés. (p.15)"
+},
+{
+"question": "Quels sont les principaux avantages de la spectrophotométrie dérivée?",
+"options": [
+  "a) Amélioration de la résolution spectrale",
+  "b) Détection des faibles variations d’absorbance",
+  "c) Suppression des effets de diffusion de la lumière",
+  "d) Réduction des temps d’analyse",
+  "e) Augmentation de l’intensité de l’absorption"
+],
+"rightPropositions": [0, 1, 2],
+"explanation": "La spectrophotométrie dérivée améliore la résolution spectrale, détecte les faibles variations d’absorbance et réduit les interférences dues à la diffusion de la lumière. (p.16)"
+},
+{
+"question": "Pourquoi la spectroscopie UV-Visible est-elle une méthode courante en laboratoire?",
+"options": [
+  "a) Elle permet d’identifier avec précision toutes les molécules présentes dans un mélange complexe",
+  "b) Elle repose sur l’absorption des radiations par les molécules, ce qui permet d’obtenir des informations sur leurs structures électroniques",
+  "c) Elle utilise exclusivement les longueurs d’onde de l’infrarouge pour détecter les liaisons chimiques",
+  "d) Elle fonctionne uniquement avec des composés aromatiques",
+  "e) Elle est applicable uniquement aux solides cristallins"
+],
+"rightPropositions": [1],
+"explanation": "La spectroscopie UV-Visible est basée sur l’absorption des radiations par les molécules, fournissant des informations sur leurs structures électroniques. (p.1)"
+},
+{
+"question": "Quelle est la principale condition pour l’application de la loi de Beer-Lambert?",
+"options": [
+  "a) L’absorption doit être réalisée dans le domaine infrarouge",
+  "b) La solution doit être suffisamment diluée pour éviter des interactions entre les molécules absorbantes",
+  "c) L’absorption dépend uniquement de la nature du solvant utilisé",
+  "d) La loi ne s’applique qu’aux solutions solides en suspension",
+  "e) L’absorbance est indépendante de la concentration de l’échantillon"
+],
+"rightPropositions": [1],
+"explanation": "La loi de Beer-Lambert est valide pour des solutions suffisamment diluées afin d’éviter des interactions qui modifieraient les propriétés des molécules absorbantes. (p.3)"
+},
+{
+"question": "Quel paramètre caractérise la position d’une bande d’absorption dans un spectre UV-Visible?",
+"options": [
+  "a) L’épaisseur de la cuve utilisée",
+  "b) La longueur d’onde λmax à laquelle se produit la transition électronique",
+  "c) La concentration de l’échantillon",
+  "d) La température de la solution analysée",
+  "e) Le type de détecteur employé dans l’analyse"
+],
+"rightPropositions": [1],
+"explanation": "La position du maximum d’absorption correspond à la longueur d’onde λmax provoquant la transition électronique. (p.4)"
+},
+{
+"question": "Comment l’effet bathochrome influence-t-il une bande d’absorption UV-Visible?",
+"options": [
+  "a) Il entraîne un déplacement vers les courtes longueurs d’onde",
+  "b) Il diminue l’intensité d’absorption",
+  "c) Il provoque un déplacement vers des longueurs d’onde plus grandes",
+  "d) Il élimine les transitions électroniques interdites",
+  "e) Il est uniquement observé pour les transitions n → σ*"
+],
+"rightPropositions": [2],
+"explanation": "L’effet bathochrome entraîne un déplacement des bandes d’absorption vers les grandes longueurs d’onde. (p.6)"
+},
+{
+"question": "Quels types de transitions électroniques sont les plus courants en spectroscopie UV-Visible?",
+"options": [
+  "a) π → π*, n → π*, n → σ* et σ → σ*",
+  "b) d → d uniquement",
+  "c) Transitions rotationnelles et vibrationnelles",
+  "d) n → σ* uniquement",
+  "e) Absorption dans l’IR moyen"
+],
+"rightPropositions": [0],
+"explanation": "Les transitions électroniques UV-Vis courantes sont π → π*, n → π*, n → σ* et σ → σ*. (p.7)"
+},
+{
+"question": "Pourquoi les complexes métalliques de transition sont-ils souvent colorés?",
+"options": [
+  "a) À cause des transitions électroniques π → π*",
+  "b) En raison des transitions d → d dans leurs orbitales",
+  "c) Parce qu’ils absorbent uniquement dans l’infrarouge",
+  "d) Car ils ont des bandes de transition σ → σ* très intenses",
+  "e) Parce qu’ils n’absorbent pas de lumière visible"
+],
+"rightPropositions": [1],
+"explanation": "Les complexes des métaux de transition présentent des transitions d → d, responsables de leur coloration. (p.8)"
+},
+{
+"question": "Quel effet produit une augmentation de la conjugaison sur une molécule organique?",
+"options": [
+  "a) Une augmentation de l’énergie de transition",
+  "b) Une diminution de la longueur d’onde d’absorption",
+  "c) Un déplacement bathochrome de la bande d’absorption",
+  "d) Une diminution du coefficient d’extinction molaire",
+  "e) Une suppression de l’absorption UV"
+],
+"rightPropositions": [2],
+"explanation": "L’augmentation de la conjugaison entraîne un déplacement bathochrome, c’est-à-dire un décalage vers des longueurs d’onde plus grandes. (p.9)"
+},
+{
+"question": "Pourquoi le solvant peut-il influencer la position des bandes d’absorption?",
+"options": [
+  "a) Il modifie l’état fondamental et excité des molécules par solvatation",
+  "b) Il empêche les transitions électroniques π → π*",
+  "c) Il augmente systématiquement l’absorbance",
+  "d) Il a un effet uniquement dans les composés inorganiques",
+  "e) Il neutralise complètement l’absorption UV"
+],
+"rightPropositions": [0],
+"explanation": "Le solvant modifie l’état fondamental et excité des molécules par solvatation, influençant ainsi la position des bandes d’absorption. (p.10)"
+},
+{
+"question": "Quelle est la fonction principale d’un monochromateur dans un spectrophotomètre UV-Vis?",
+"options": [
+  "a) Amplifier l’intensité du signal lumineux",
+  "b) Sélectionner une longueur d’onde spécifique du spectre",
+  "c) Modifier la couleur de la lumière incidente",
+  "d) Diminuer l’absorbance de l’échantillon",
+  "e) Convertir la lumière en signal électrique"
+],
+"rightPropositions": [1],
+"explanation": "Le monochromateur sélectionne une longueur d’onde spécifique du spectre lumineux. (p.12)"
+},
+{
+"question": "Pourquoi les lampes à deutérium sont-elles préférées pour les mesures UV?",
+"options": [
+  "a) Elles couvrent un large spectre allant du visible à l’IR",
+  "b) Elles fournissent un rayonnement stable dans l’UV",
+  "c) Elles émettent un spectre monochromatique pur",
+  "d) Elles ne nécessitent pas de monochromateur",
+  "e) Elles sont exclusivement utilisées pour les solutions aqueuses"
+],
+"rightPropositions": [1],
+"explanation": "Les lampes à deutérium fournissent un rayonnement stable dans la région UV. (p.13)"
+}
+]
+,
+        quiz3: [
+{
+"question": "Quels sont les principaux types de luminescence en fonction du mode d’excitation?",
+"options": [
+  "a) Chimiluminescence",
+  "b) Thermoluminescence",
+  "c) Électroluminescence",
+  "d) Bioluminescence",
+  "e) Radioluminescence"
+],
+"rightPropositions": [0, 1, 2, 3],
+"explanation": "Les principaux types de luminescence sont la chimiluminescence (réaction chimique), la thermoluminescence (chaleur), l’électroluminescence (champ électrique) et la bioluminescence (réactions enzymatiques). (p.6)"
+},
+{
+"question": "Quels processus interviennent dans la relaxation d’une molécule excitée?",
+"options": [
+  "a) Relaxation vibrationnelle",
+  "b) Conversion interne",
+  "c) Fluorescence",
+  "d) Conversion intersystème",
+  "e) Photodissociation"
+],
+"rightPropositions": [0, 1, 2, 3],
+"explanation": "Les molécules excitées peuvent revenir à l’état fondamental par relaxation vibrationnelle, conversion interne, fluorescence ou conversion intersystème. (p.15)"
+},
+{
+"question": "Quels sont les critères essentiels d’un bon fluorophore?",
+"options": [
+  "a) Présence de plusieurs cycles aromatiques",
+  "b) Faible coefficient d’extinction molaire",
+  "c) Structure rigide",
+  "d) Absorption dans l’UV ou le visible",
+  "e) Rendement quantique élevé"
+],
+"rightPropositions": [0, 2, 3, 4],
+"explanation": "Un bon fluorophore contient des cycles aromatiques, a une structure rigide, absorbe dans l’UV-visible et présente un rendement quantique élevé. (p.24)"
+},
+{
+"question": "Quels facteurs influencent l’intensité de fluorescence d’une molécule?",
+"options": [
+  "a) La nature du solvant",
+  "b) La température",
+  "c) La concentration de l’échantillon",
+  "d) L’oxygène dissous",
+  "e) Le pH"
+],
+"rightPropositions": [0, 1, 2, 3, 4],
+"explanation": "Le solvant, la température, la concentration, l’oxygène dissous et le pH influencent l’intensité de fluorescence. (p.49-60)"
+},
+{
+"question": "Pourquoi la fluorescence de certaines molécules diminue avec l’augmentation de la température?",
+"options": [
+  "a) La température augmente la fréquence des collisions moléculaires",
+  "b) La température diminue l’absorption de lumière UV",
+  "c) La température favorise les processus de relaxation non radiatifs",
+  "d) L’augmentation de température convertit les molécules fluorescentes en phosphorescentes",
+  "e) La température réduit le rendement quantique de fluorescence"
+],
+"rightPropositions": [0, 2, 4],
+"explanation": "L’augmentation de température augmente les collisions et favorise la relaxation non radiative, réduisant ainsi la fluorescence. (p.53)"
+},
+{
+"question": "Quelle est la principale différence entre fluorescence et phosphorescence?",
+"options": [
+  "a) La fluorescence est plus rapide que la phosphorescence",
+  "b) La fluorescence implique une transition spin-permise, tandis que la phosphorescence implique une transition spin-interdite",
+  "c) La phosphorescence se produit uniquement à basse température",
+  "d) La fluorescence implique un état triplet, alors que la phosphorescence implique un état singulet",
+  "e) La phosphorescence est observable uniquement en milieu gazeux"
+],
+"rightPropositions": [0, 1],
+"explanation": "La fluorescence est rapide et spin-permise, tandis que la phosphorescence est plus lente et spin-interdite. (p.18)"
+},
+{
+"question": "Quels éléments sont nécessaires dans un spectrofluorimètre?",
+"options": [
+  "a) Une source lumineuse",
+  "b) Un monochromateur d’excitation",
+  "c) Une cuve adaptée",
+  "d) Un monochromateur d’émission",
+  "e) Un spectromètre de masse"
+],
+"rightPropositions": [0, 1, 2, 3],
+"explanation": "Un spectrofluorimètre comprend une source lumineuse, un monochromateur d’excitation et d’émission, ainsi qu’une cuve adaptée. (p.63)"
+},
+{
+"question": "Pourquoi les solvants polaires influencent-ils la fluorescence?",
+"options": [
+  "a) Ils stabilisent les états excités et modifient la longueur d’onde d’émission",
+  "b) Ils augmentent toujours l’intensité de fluorescence",
+  "c) Ils favorisent la relaxation non radiative",
+  "d) Ils empêchent les transitions électroniques π → π*",
+  "e) Ils interagissent avec les fluorophores par solvatation"
+],
+"rightPropositions": [0, 2, 4],
+"explanation": "Les solvants polaires modifient la fluorescence en stabilisant les états excités et en favorisant la relaxation non radiative. (p.49)"
+},
+{
+"question": "Quelles techniques analytiques utilisent la spectrofluorimétrie?",
+"options": [
+  "a) Chromatographie sur couche mince (CCM)",
+  "b) Chromatographie liquide haute performance (CLHP)",
+  "c) Spectrométrie de masse",
+  "d) Dosage des médicaments",
+  "e) Études environnementales"
+],
+"rightPropositions": [0, 1, 3, 4],
+"explanation": "La spectrofluorimétrie est utilisée en CCM, CLHP, dosage de médicaments et études environnementales. (p.75)"
+},
+{
+"question": "Pourquoi la concentration excessive d’un échantillon peut-elle fausser la mesure de fluorescence?",
+"options": [
+  "a) Elle cause un effet de filtre interne",
+  "b) Elle modifie la longueur d’onde d’émission",
+  "c) Elle entraîne une réabsorption de la lumière fluorescente",
+  "d) Elle augmente le bruit de fond du spectre",
+  "e) Elle amplifie les transitions électroniques intersystème"
+],
+"rightPropositions": [0, 2, 3],
+"explanation": "Une concentration excessive entraîne un effet de filtre interne et une réabsorption de la fluorescence, faussant la mesure. (p.54)"
+},
+{
+"question": "Quels phénomènes peuvent provoquer l’extinction (quenching) de la fluorescence?",
+"options": [
+  "a) Présence de cations métalliques",
+  "b) Inhibition par collision",
+  "c) Effet hyperchrome",
+  "d) Formation de complexes non fluorescents",
+  "e) Excitation prolongée par une source intense"
+],
+"rightPropositions": [0, 1, 3, 4],
+"explanation": "L’extinction de fluorescence peut être causée par des cations métalliques, des collisions, la formation de complexes et une excitation prolongée. (p.56)"
+},
+{
+"question": "Quels facteurs influencent la durée de vie de fluorescence d’un fluorophore?",
+"options": [
+  "a) La température",
+  "b) La polarité du solvant",
+  "c) La structure moléculaire",
+  "d) L’intensité de la lumière excitatrice",
+  "e) La présence de fluorophores voisins"
+],
+"rightPropositions": [0, 1, 2, 4],
+"explanation": "La durée de vie de fluorescence est influencée par la température, la polarité du solvant, la structure et la présence de fluorophores voisins. (p.46)"
+}
+]
+,
+        quiz4: [
+{
+"question": "Quel est le principe fondamental de la spectroscopie infrarouge?",
+"options": [
+  "a) Elle mesure l’absorption de la lumière par les électrons des atomes",
+  "b) Elle repose sur l’absorption des radiations infrarouges par les vibrations moléculaires",
+  "c) Elle détecte les émissions radioactives des molécules",
+  "d) Elle analyse les variations de la transmittance en fonction de la fréquence",
+  "e) Elle repose uniquement sur la diffraction de la lumière infrarouge"
+],
+"rightPropositions": [1, 3],
+"explanation": "La spectroscopie IR mesure l’absorption des radiations par les vibrations moléculaires et analyse la transmittance. (p.1-2)"
+},
+{
+"question": "Quels types de molécules sont généralement actives en spectroscopie infrarouge?",
+"options": [
+  "a) Les molécules présentant un moment dipolaire variable",
+  "b) Les molécules homo-nucléaires comme O₂ et N₂",
+  "c) Les molécules hétéro-nucléaires comme HCl et CO",
+  "d) Les molécules symétriques",
+  "e) Les molécules ayant des liaisons hydrogène"
+],
+"rightPropositions": [0, 2, 4],
+"explanation": "Seules les molécules dont les vibrations entraînent une variation du moment dipolaire sont actives en IR. (p.2)"
+},
+{
+"question": "Quels sont les principaux types de vibrations moléculaires en spectroscopie IR?",
+"options": [
+  "a) Vibration de valence (élongation)",
+  "b) Vibration de déformation (bending)",
+  "c) Vibration de rotation",
+  "d) Vibration de compression",
+  "e) Vibration de dissociation"
+],
+"rightPropositions": [0, 1],
+"explanation": "Les vibrations observées en IR sont les vibrations de valence et de déformation. (p.3-4)"
+},
+{
+"question": "Selon la loi de Hooke, quels facteurs influencent la fréquence d’oscillation d’une liaison?",
+"options": [
+  "a) La masse réduite des atomes impliqués",
+  "b) La constante de force de la liaison",
+  "c) La température de l’échantillon",
+  "d) La concentration de la solution",
+  "e) La symétrie moléculaire"
+],
+"rightPropositions": [0, 1],
+"explanation": "La fréquence d’oscillation dépend de la masse réduite et de la constante de force de la liaison. (p.5)"
+},
+{
+"question": "Quelles sont les caractéristiques des vibrations de valence en spectroscopie IR?",
+"options": [
+  "a) Elles concernent la variation de la distance interatomique",
+  "b) Elles incluent des vibrations symétriques et asymétriques",
+  "c) Elles sont uniquement observées pour les molécules diatomiques",
+  "d) Elles apparaissent dans la région des empreintes digitales",
+  "e) Elles sont indépendantes du moment dipolaire"
+],
+"rightPropositions": [0, 1],
+"explanation": "Les vibrations de valence affectent la distance interatomique et peuvent être symétriques ou asymétriques. (p.3)"
+},
+{
+"question": "Quels facteurs influencent la fréquence de vibration des liaisons?",
+"options": [
+  "a) La masse des atomes liés",
+  "b) Le degré d’hybridation du carbone",
+  "c) La présence d’une conjugaison électronique",
+  "d) La température de l’échantillon",
+  "e) La concentration de l’échantillon"
+],
+"rightPropositions": [0, 1, 2],
+"explanation": "La fréquence de vibration est influencée par la masse atomique, l’hybridation et la conjugaison. (p.6)"
+},
+{
+"question": "Pourquoi la liaison hydrogène influence-t-elle les bandes d’absorption IR?",
+"options": [
+  "a) Elle augmente la fréquence d’absorption des groupes fonctionnels",
+  "b) Elle entraîne un élargissement des bandes d’absorption",
+  "c) Elle empêche l’absorption IR des molécules",
+  "d) Elle modifie l’intensité des bandes spectrales",
+  "e) Elle diminue systématiquement la longueur d’onde d’absorption"
+],
+"rightPropositions": [1, 3],
+"explanation": "La liaison hydrogène élargit et modifie l’intensité des bandes d’absorption IR. (p.6)"
+},
+{
+"question": "Quels types d’échantillons peuvent être analysés par spectroscopie infrarouge?",
+"options": [
+  "a) Gaz",
+  "b) Liquides",
+  "c) Solides",
+  "d) Métaux purs",
+  "e) Solutions aqueuses fortement concentrées"
+],
+"rightPropositions": [0, 1, 2],
+"explanation": "La spectroscopie IR peut analyser des échantillons sous forme gazeuse, liquide ou solide. (p.10)"
+},
+{
+"question": "Quels sont les avantages des spectromètres à transformée de Fourier (FTIR)?",
+"options": [
+  "a) Acquisition rapide des spectres",
+  "b) Haute sensibilité",
+  "c) Possibilité d’analyser des solutions très concentrées",
+  "d) Simplicité d’utilisation par rapport aux spectromètres dispersifs",
+  "e) Meilleure résolution spectrale"
+],
+"rightPropositions": [0, 1, 4],
+"explanation": "Les spectromètres FTIR offrent une acquisition rapide, une haute sensibilité et une meilleure résolution spectrale. (p.9)"
+},
+{
+"question": "Quels modes d’analyse infrarouge existent?",
+"options": [
+  "a) Transmission",
+  "b) Réflexion spéculaire",
+  "c) Réflexion diffuse",
+  "d) Réflexion totale atténuée (ATR)",
+  "e) Diffraction des rayons X"
+],
+"rightPropositions": [0, 1, 2, 3],
+"explanation": "Les principales techniques en IR sont la transmission, la réflexion spéculaire, la réflexion diffuse et l’ATR. (p.10)"
+},
+{
+"question": "Quelle est l’utilité de l’empreinte digitale dans un spectre IR?",
+"options": [
+  "a) Elle permet d’identifier les composés grâce à un spectre unique",
+  "b) Elle sert à mesurer la concentration d’une molécule",
+  "c) Elle est située entre 4000 et 3000 cm⁻¹",
+  "d) Elle contient des bandes spécifiques aux vibrations de valence",
+  "e) Elle varie en fonction du solvant utilisé"
+],
+"rightPropositions": [0],
+"explanation": "L’empreinte digitale d’un spectre IR est unique pour chaque composé et permet son identification. (p.8)"
+},
+{
+"question": "Quels types de composés organiques sont couramment identifiés par IR?",
+"options": [
+  "a) Alcools et phénols",
+  "b) Cétones et aldéhydes",
+  "c) Hydrocarbures saturés et insaturés",
+  "d) Métaux de transition",
+  "e) Acides carboxyliques et amines"
+],
+"rightPropositions": [0, 1, 2, 4],
+"explanation": "L’IR est utilisée pour identifier de nombreux composés organiques, y compris les alcools, cétones, hydrocarbures et amines. (p.11)"
+}
+]
+,
+        quiz5: [
+{
+"question": "Quel est le principe de la spectrométrie Raman?",
+"options": [
+  "a) Elle repose sur l’absorption des radiations infrarouges par les molécules",
+  "b) Elle est basée sur la diffusion inélastique de la lumière par une substance",
+  "c) Elle repose sur l’émission de photons par relaxation d’un état excité",
+  "d) Elle nécessite une source laser monochromatique",
+  "e) Elle détecte uniquement les vibrations des liaisons polaires"
+],
+"rightPropositions": [1, 3],
+"explanation": "La spectrométrie Raman est basée sur la diffusion inélastique de la lumière et utilise une source laser monochromatique. (p.1)"
+},
+{
+"question": "Quelles sont les caractéristiques de la diffusion Raman?",
+"options": [
+  "a) Elle est un phénomène de diffusion élastique",
+  "b) Elle entraîne un décalage de fréquence par rapport à la lumière incidente",
+  "c) Elle produit des raies Stokes et anti-Stokes",
+  "d) Elle représente environ 1/10⁸ des photons diffusés",
+  "e) Elle est plus intense que la diffusion Rayleigh"
+],
+"rightPropositions": [1, 2, 3],
+"explanation": "La diffusion Raman entraîne un décalage de fréquence et produit les raies Stokes et anti-Stokes. (p.2)"
+},
+{
+"question": "Quelles sont les différences entre diffusion Raman Stokes et anti-Stokes?",
+"options": [
+  "a) La diffusion Stokes a une fréquence plus faible que la lumière incidente",
+  "b) La diffusion anti-Stokes a une fréquence plus élevée que la lumière incidente",
+  "c) La diffusion Stokes est plus intense que l’anti-Stokes",
+  "d) La diffusion anti-Stokes est toujours observée en analyse",
+  "e) La diffusion anti-Stokes est indépendante de la température"
+],
+"rightPropositions": [0, 1, 2],
+"explanation": "La diffusion Stokes a une fréquence plus faible et est plus intense que l’anti-Stokes. (p.2)"
+},
+{
+"question": "Quels critères rendent une vibration active en spectroscopie Raman?",
+"options": [
+  "a) Une variation de la polarisabilité moléculaire",
+  "b) Une variation du moment dipolaire",
+  "c) Une symétrie moléculaire particulière",
+  "d) La présence d’une liaison hydrogène",
+  "e) Une transition électronique permise"
+],
+"rightPropositions": [0, 2],
+"explanation": "Une vibration est active en Raman si elle entraîne une variation de la polarisabilité moléculaire. (p.3)"
+},
+{
+"question": "Quels types de molécules sont généralement actives en spectroscopie Raman?",
+"options": [
+  "a) Les molécules homo-nucléaires comme O₂ et N₂",
+  "b) Les molécules à liaisons fortement polarisables",
+  "c) Les molécules asymétriques",
+  "d) Les molécules diatomiques hétéro-nucléaires",
+  "e) Les polymères cristallins"
+],
+"rightPropositions": [0, 1, 4],
+"explanation": "Les molécules homo-nucléaires et les polymères cristallins sont généralement actives en Raman. (p.3)"
+},
+{
+"question": "Quelle partie du spectre Raman est utilisée en analyse?",
+"options": [
+  "a) La raie Rayleigh",
+  "b) La partie Stokes du spectre",
+  "c) La partie anti-Stokes du spectre",
+  "d) L’ensemble du spectre Raman",
+  "e) La région des basses fréquences uniquement"
+],
+"rightPropositions": [1],
+"explanation": "En analyse, seule la partie Stokes du spectre Raman est utilisée. (p.4)"
+},
+{
+"question": "Quels sont les composants d’un spectromètre Raman?",
+"options": [
+  "a) Une source laser",
+  "b) Un filtre optique",
+  "c) Un monochromateur",
+  "d) Un détecteur CCD",
+  "e) Un spectromètre de masse"
+],
+"rightPropositions": [0, 1, 2, 3],
+"explanation": "Un spectromètre Raman comprend une source laser, un filtre optique, un monochromateur et un détecteur CCD. (p.5)"
+},
+{
+"question": "Quels types de lasers sont utilisés en spectroscopie Raman?",
+"options": [
+  "a) Lasers UV",
+  "b) Lasers visibles",
+  "c) Lasers infrarouges proches (PIR)",
+  "d) Lasers à électrons libres",
+  "e) Lasers CO₂"
+],
+"rightPropositions": [0, 1, 2],
+"explanation": "Les lasers UV, visibles et PIR sont utilisés en spectroscopie Raman. (p.5)"
+},
+{
+"question": "Quels sont les avantages de la spectrométrie Raman?",
+"options": [
+  "a) Analyse non destructive",
+  "b) Étude possible en solution aqueuse",
+  "c) Utilisation de cellules en verre",
+  "d) Haute sensibilité",
+  "e) Facilité d’analyse in situ"
+],
+"rightPropositions": [0, 1, 2, 4],
+"explanation": "La spectrométrie Raman est non destructive, fonctionne en solution aqueuse et permet une analyse in situ. (p.6)"
+},
+{
+"question": "Quels sont les inconvénients de la spectrométrie Raman?",
+"options": [
+  "a) Le signal Raman peut être occulté par la fluorescence",
+  "b) La spectroscopie Raman ne peut pas analyser les liquides",
+  "c) Sensibilité plus faible que l’IR pour certains échantillons",
+  "d) Bibliothèque spectrale limitée",
+  "e) Nécessité d’un échantillon épais d’au moins 100 µm"
+],
+"rightPropositions": [0, 2, 3, 4],
+"explanation": "Les principaux inconvénients sont la fluorescence parasite, une sensibilité moindre et des exigences d’échantillon. (p.6)"
+},
+{
+"question": "Quels domaines d’application utilisent la spectroscopie Raman?",
+"options": [
+  "a) Industrie pharmaceutique",
+  "b) Environnement",
+  "c) Analyse des œuvres d’art",
+  "d) Géologie",
+  "e) Biologie"
+],
+"rightPropositions": [0, 1, 2, 3, 4],
+"explanation": "La spectroscopie Raman est utilisée en pharmaceutique, en environnement, pour les œuvres d’art, la géologie et la biologie. (p.6)"
+},
+{
+"question": "Quelle application de la spectrométrie Raman est utilisée en biologie?",
+"options": [
+  "a) Identification des structures cellulaires",
+  "b) Détection des prothèses implantées",
+  "c) Étude des réactions enzymatiques",
+  "d) Détermination des isotopes",
+  "e) Identification des protéines"
+],
+"rightPropositions": [0, 1, 2, 4],
+"explanation": "La spectrométrie Raman est utilisée pour identifier les structures cellulaires, les protéines et les prothèses. (p.6)"
+}
+]
 
-checkAnswersButton.addEventListener('click', function () {
-    const currentQuestion = questions[currentQuestionIndex];
-    const rightAnswers = currentQuestion.rightPropositions;
-    const options = quizContainer.querySelectorAll('.question.active .options input');
-    const labels = quizContainer.querySelectorAll('.question.active .options label');
-    labels.forEach(label => label.classList.remove('correct', 'incorrect'));
-    options.forEach((option, index) => {
-        if (rightAnswers.includes(index)) {
-            labels[index].classList.add('correct');
-        }
-        if (option.checked && !rightAnswers.includes(index)) {
-            labels[index].classList.add('incorrect');
-        }
+    };
+
+    let currentQuiz = [];
+    let currentQuestionIndex = 0;
+    const quizSelector = document.getElementById('quiz-selector');
+    const quizContainer = document.getElementById('quiz-container');
+    const checkAnswersButton = document.getElementById('check-answers');
+    const nextQuestionButton = document.getElementById('next-question');
+
+     // Add buttons to select a quiz
+    const quizNames = {
+        quiz1: "1 Généralités sur les méthodes spectrales",
+        quiz2: "2 Spectroscopie d’absorption dans l’UV- visible",
+        quiz3: "3 La spectrofluorimetrie",
+        quiz4: "4 Spectroscopie d'absortion moléculaire infrarouge",
+        quiz5: "5 Spectrométrie Raman"
+    };
+
+    Object.keys(quizzes).forEach((quizKey) => {
+        const button = document.createElement('button');
+        button.textContent = quizNames[quizKey]; // Use specific quiz names
+        button.addEventListener('click', () => {
+            currentQuiz = quizzes[quizKey];
+            currentQuestionIndex = 0;
+            quizSelector.style.display = 'none'; // Hide quiz selection buttons
+            renderQuestion();
+        });
+        quizSelector.appendChild(button);
     });
-    const explanationDiv = document.createElement('div');
-    explanationDiv.className = 'explanation';
-    explanationDiv.textContent = `Explanation: ${currentQuestion.explanation}`;
-    const activeQuestion = quizContainer.querySelector('.question.active');
-    if (!activeQuestion.querySelector('.explanation')) {
-        activeQuestion.appendChild(explanationDiv);
-    }
-    // Show the Next Question button after checking answers
-    nextQuestionButton.style.display = 'inline-block';
-});
 
-nextQuestionButton.addEventListener('click', function () {
-    quizContainer.querySelector('.question.active').classList.remove('active');
-    if (++currentQuestionIndex < questions.length) {
-        showQuestion(currentQuestionIndex);
-        nextQuestionButton.style.display = 'none'; // Hide Next Question button until answers are checked
-    } else {
-        alert('End of quiz!');
-    }
-});
-
-function renderQuestions(questions) {
-    quizContainer.innerHTML = questions.map(q => `
-        <div class="question">
-            <p><b>${q.question}</b></p>
-            <div class="options">
-                ${q.options.map((opt, i) => `<label><input type="checkbox" value="${i}">${opt}</label>`).join('')}
+    // Render the current question
+    function renderQuestion() {
+        const currentQuestion = currentQuiz[currentQuestionIndex];
+        quizContainer.innerHTML = `
+            <div class="question">
+                <p><b>${currentQuestion.question}</b></p>
+                <div class="options">
+                    ${currentQuestion.options.map((opt, i) => `
+                        <label>
+                            <input type="checkbox" value="${i}">${opt}
+                        </label>
+                    `).join('')}
+                </div>
             </div>
-        </div>
-    `).join('');
-}
+        `;
+        checkAnswersButton.style.display = 'inline-block';
+        nextQuestionButton.style.display = 'none';
+    }
 
-function showQuestion(index) {
-    quizContainer.querySelectorAll('.question')[index].classList.add('active');
-}
+    // Check the user's answers
+    function checkAnswers() {
+        const currentQuestion = currentQuiz[currentQuestionIndex];
+        const options = quizContainer.querySelectorAll('.options input');
+        const labels = quizContainer.querySelectorAll('.options label');
+        let isCorrect = true;
+
+        labels.forEach(label => label.classList.remove('correct', 'incorrect'));
+        options.forEach((option, index) => {
+            if (currentQuestion.rightPropositions.includes(index)) {
+                labels[index].classList.add('correct');
+            }
+            if (option.checked && !currentQuestion.rightPropositions.includes(index)) {
+                labels[index].classList.add('incorrect');
+                isCorrect = false;
+            }
+        });
+
+        // Show explanation
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation';
+        explanationDiv.textContent = `Explanation: ${currentQuestion.explanation}`;
+        quizContainer.appendChild(explanationDiv);
+
+        // Show the Next Question button
+        nextQuestionButton.style.display = 'inline-block';
+    }
+
+    // Move to the next question
+    function nextQuestion() {
+        if (currentQuestionIndex < currentQuiz.length - 1) {
+            currentQuestionIndex++;
+            renderQuestion();
+        } else {
+            alert('Quiz finished!');
+            quizSelector.style.display = 'flex'; // Show quiz selection buttons again
+            quizContainer.innerHTML = ''; // Clear quiz container
+            checkAnswersButton.style.display = 'none';
+            nextQuestionButton.style.display = 'none';
+        }
+    }
+
+    // Event listeners
+    checkAnswersButton.addEventListener('click', checkAnswers);
+    nextQuestionButton.addEventListener('click', nextQuestion)
+    document.getElementById("LOGO").addEventListener("click", function() {
+    window.location.href = "https://fouadess04.github.io/Pharmaquiz";
+  });
