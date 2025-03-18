@@ -1,0 +1,119 @@
+body { 
+    font-family: 'Lexend Deca', 'Red Hat Display', Arial, sans-serif; /* Lexend Deca as the primary font */
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+    background-color: #f0fff0; /* Very light green for the body background */
+}
+header { 
+    display: flex; 
+    align-items: center; 
+    background-color: #e0f7e0; /* Light green for the header */
+    padding: 10px 20px; 
+    border-bottom: 1px solid #c8e6c9; /* Slightly darker green border */
+}
+header img { 
+    height: 50px; 
+    margin-right: 20px; 
+}
+header h1 { 
+    flex-grow: 1; 
+    text-align: center; 
+    margin: 0; 
+    color: #2e7d32; /* Dark green for the text to match the image */
+    font-family: 'Lexend Deca', 'Red Hat Display', Arial, sans-serif; /* Lexend Deca for the header title */
+    font-weight: 700; /* Bold weight for the title */
+}
+main { 
+    flex-grow: 1; 
+    padding: 20px; 
+    background-color: #f0fff0; /* Very light green for the main content */
+}
+footer { 
+    text-align: center; 
+    padding: 10px; 
+    background-color: #e0f7e0; /* Light green for the footer */
+    border-top: 1px solid #c8e6c9; /* Slightly darker green border */
+    color: #2e7d32; /* Dark green for the footer text */
+    font-family: 'Lexend Deca', 'Red Hat Display', Arial, sans-serif; /* Lexend Deca for the footer */
+    font-weight: 500; /* Medium weight for the footer */
+}
+.question { 
+    margin-bottom: 20px; 
+    display: none; 
+}
+.question.active { 
+    display: block; 
+}
+.options label { 
+    display: block; 
+    margin: 5px 0; 
+}
+/* Styled File Upload Button */
+.file-upload-container {
+    margin-top: 20px;
+    text-align: center;
+}
+.file-upload-label {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #28a745, #218838); /* Green gradient */
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+.file-upload-label:hover {
+    background: linear-gradient(135deg, #218838, #1e7e34); /* Darker green gradient on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+.file-upload-label:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#file-input {
+    display: none; /* Hide the default file input */
+}
+/* Updated Button Styles */
+#check-answers, #next-question, #start-quiz { 
+    margin-top: 20px; 
+    padding: 12px 24px; 
+    background: linear-gradient(135deg, #28a745, #218838); /* Green gradient */
+    color: white; 
+    border: none; 
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; 
+    font-family: 'Lexend Deca', 'Red Hat Display', Arial, sans-serif; /* Lexend Deca for buttons */
+    font-size: 16px; 
+    font-weight: 600; /* Semi-bold weight for buttons */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+#check-answers:hover, #next-question:hover, #start-quiz:hover { 
+    background: linear-gradient(135deg, #218838, #1e7e34); /* Darker green gradient on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+#check-answers:active, #next-question:active, #start-quiz:active { 
+    transform: translateY(0); /* Reset lift when clicked */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow when clicked */
+}
+.correct { 
+    color: green; 
+    font-weight: bold; 
+}
+.incorrect { 
+    color: red; 
+    font-weight: bold; 
+}
+.explanation { 
+    margin-top: 10px; 
+    font-style: italic; 
+    color: #555; 
+}
