@@ -1,0 +1,146 @@
+[
+  {
+    "question": "Quel est le principe de la spectrométrie Raman?",
+    "options": [
+      "a) Elle repose sur l’absorption des radiations infrarouges par les molécules",
+      "b) Elle est basée sur la diffusion inélastique de la lumière par une substance",
+      "c) Elle repose sur l’émission de photons par relaxation d’un état excité",
+      "d) Elle nécessite une source laser monochromatique",
+      "e) Elle détecte uniquement les vibrations des liaisons polaires"
+    ],
+    "rightPropositions": [1, 3],
+    "explanation": "La spectrométrie Raman est basée sur la diffusion inélastique de la lumière et utilise une source laser monochromatique. (p.1)"
+  },
+  {
+    "question": "Quelles sont les caractéristiques de la diffusion Raman?",
+    "options": [
+      "a) Elle est un phénomène de diffusion élastique",
+      "b) Elle entraîne un décalage de fréquence par rapport à la lumière incidente",
+      "c) Elle produit des raies Stokes et anti-Stokes",
+      "d) Elle représente environ 1/10⁸ des photons diffusés",
+      "e) Elle est plus intense que la diffusion Rayleigh"
+    ],
+    "rightPropositions": [1, 2, 3],
+    "explanation": "La diffusion Raman entraîne un décalage de fréquence et produit les raies Stokes et anti-Stokes. (p.2)"
+  },
+  {
+    "question": "Quelles sont les différences entre diffusion Raman Stokes et anti-Stokes?",
+    "options": [
+      "a) La diffusion Stokes a une fréquence plus faible que la lumière incidente",
+      "b) La diffusion anti-Stokes a une fréquence plus élevée que la lumière incidente",
+      "c) La diffusion Stokes est plus intense que l’anti-Stokes",
+      "d) La diffusion anti-Stokes est toujours observée en analyse",
+      "e) La diffusion anti-Stokes est indépendante de la température"
+    ],
+    "rightPropositions": [0, 1, 2],
+    "explanation": "La diffusion Stokes a une fréquence plus faible et est plus intense que l’anti-Stokes. (p.2)"
+  },
+  {
+    "question": "Quels critères rendent une vibration active en spectroscopie Raman?",
+    "options": [
+      "a) Une variation de la polarisabilité moléculaire",
+      "b) Une variation du moment dipolaire",
+      "c) Une symétrie moléculaire particulière",
+      "d) La présence d’une liaison hydrogène",
+      "e) Une transition électronique permise"
+    ],
+    "rightPropositions": [0, 2],
+    "explanation": "Une vibration est active en Raman si elle entraîne une variation de la polarisabilité moléculaire. (p.3)"
+  },
+  {
+    "question": "Quels types de molécules sont généralement actives en spectroscopie Raman?",
+    "options": [
+      "a) Les molécules homo-nucléaires comme O₂ et N₂",
+      "b) Les molécules à liaisons fortement polarisables",
+      "c) Les molécules asymétriques",
+      "d) Les molécules diatomiques hétéro-nucléaires",
+      "e) Les polymères cristallins"
+    ],
+    "rightPropositions": [0, 1, 4],
+    "explanation": "Les molécules homo-nucléaires et les polymères cristallins sont généralement actives en Raman. (p.3)"
+  },
+  {
+    "question": "Quelle partie du spectre Raman est utilisée en analyse?",
+    "options": [
+      "a) La raie Rayleigh",
+      "b) La partie Stokes du spectre",
+      "c) La partie anti-Stokes du spectre",
+      "d) L’ensemble du spectre Raman",
+      "e) La région des basses fréquences uniquement"
+    ],
+    "rightPropositions": [1],
+    "explanation": "En analyse, seule la partie Stokes du spectre Raman est utilisée. (p.4)"
+  },
+  {
+    "question": "Quels sont les composants d’un spectromètre Raman?",
+    "options": [
+      "a) Une source laser",
+      "b) Un filtre optique",
+      "c) Un monochromateur",
+      "d) Un détecteur CCD",
+      "e) Un spectromètre de masse"
+    ],
+    "rightPropositions": [0, 1, 2, 3],
+    "explanation": "Un spectromètre Raman comprend une source laser, un filtre optique, un monochromateur et un détecteur CCD. (p.5)"
+  },
+  {
+    "question": "Quels types de lasers sont utilisés en spectroscopie Raman?",
+    "options": [
+      "a) Lasers UV",
+      "b) Lasers visibles",
+      "c) Lasers infrarouges proches (PIR)",
+      "d) Lasers à électrons libres",
+      "e) Lasers CO₂"
+    ],
+    "rightPropositions": [0, 1, 2],
+    "explanation": "Les lasers UV, visibles et PIR sont utilisés en spectroscopie Raman. (p.5)"
+  },
+  {
+    "question": "Quels sont les avantages de la spectrométrie Raman?",
+    "options": [
+      "a) Analyse non destructive",
+      "b) Étude possible en solution aqueuse",
+      "c) Utilisation de cellules en verre",
+      "d) Haute sensibilité",
+      "e) Facilité d’analyse in situ"
+    ],
+    "rightPropositions": [0, 1, 2, 4],
+    "explanation": "La spectrométrie Raman est non destructive, fonctionne en solution aqueuse et permet une analyse in situ. (p.6)"
+  },
+  {
+    "question": "Quels sont les inconvénients de la spectrométrie Raman?",
+    "options": [
+      "a) Le signal Raman peut être occulté par la fluorescence",
+      "b) La spectroscopie Raman ne peut pas analyser les liquides",
+      "c) Sensibilité plus faible que l’IR pour certains échantillons",
+      "d) Bibliothèque spectrale limitée",
+      "e) Nécessité d’un échantillon épais d’au moins 100 µm"
+    ],
+    "rightPropositions": [0, 2, 3, 4],
+    "explanation": "Les principaux inconvénients sont la fluorescence parasite, une sensibilité moindre et des exigences d’échantillon. (p.6)"
+  },
+  {
+    "question": "Quels domaines d’application utilisent la spectroscopie Raman?",
+    "options": [
+      "a) Industrie pharmaceutique",
+      "b) Environnement",
+      "c) Analyse des œuvres d’art",
+      "d) Géologie",
+      "e) Biologie"
+    ],
+    "rightPropositions": [0, 1, 2, 3, 4],
+    "explanation": "La spectroscopie Raman est utilisée en pharmaceutique, en environnement, pour les œuvres d’art, la géologie et la biologie. (p.6)"
+  },
+  {
+    "question": "Quelle application de la spectrométrie Raman est utilisée en biologie?",
+    "options": [
+      "a) Identification des structures cellulaires",
+      "b) Détection des prothèses implantées",
+      "c) Étude des réactions enzymatiques",
+      "d) Détermination des isotopes",
+      "e) Identification des protéines"
+    ],
+    "rightPropositions": [0, 1, 2, 4],
+    "explanation": "La spectrométrie Raman est utilisée pour identifier les structures cellulaires, les protéines et les prothèses. (p.6)"
+  }
+]

@@ -1,0 +1,134 @@
+[
+  {
+    "question": "Quelle est la relation correcte entre la fréquence (ν), la longueur d’onde (λ) et la vitesse de la lumière (c) en spectroscopie?",
+    "options": [
+      "a) ν = c × λ",
+      "b) λ = c / ν",
+      "c) σ = c × λ",
+      "d) ν = λ / c",
+      "e) c = ν × σ"
+    ],
+    "rightPropositions": [1],
+    "explanation": "La fréquence ν est donnée par ν = c / λ, où c est la vitesse de la lumière. (p.1)"
+  },
+  {
+    "question": "Quel facteur distingue principalement les rayons X des micro-ondes?",
+    "options": [
+      "a) Leur capacité à être absorbés par l’ozone",
+      "b) Leur énergie plus faible permettant une meilleure transmission à travers les solides",
+      "c) Leur différence de fréquence et de longueur d’onde",
+      "d) Leur utilisation limitée aux applications médicales",
+      "e) Leur capacité à induire des transitions vibrationnelles"
+    ],
+    "rightPropositions": [2],
+    "explanation": "Les rayons X et les micro-ondes diffèrent principalement par leur fréquence et leur longueur d’onde. (p.2)"
+  },
+  {
+    "question": "Pourquoi l’absorption dans l’ultraviolet peut-elle induire la dissociation d’une molécule?",
+    "options": [
+      "a) Parce qu’elle entraîne une augmentation de la température du milieu",
+      "b) Parce que l’énergie des photons UV est suffisante pour rompre certaines liaisons chimiques",
+      "c) Parce qu’elle affecte principalement les états rotationnels et vibrationnels",
+      "d) Parce que la fluorescence est une conséquence directe de la dissociation",
+      "e) Parce que les photons UV possèdent une énergie inférieure à celle des photons IR"
+    ],
+    "rightPropositions": [1],
+    "explanation": "L’absorption UV correspond à des énergies pouvant atteindre 600 kJ/mol, suffisantes pour rompre des liaisons chimiques. (p.5)"
+  },
+  {
+    "question": "Quelle caractéristique des lasers est essentielle pour leurs applications en spectroscopie?",
+    "options": [
+      "a) Leur émission polychromatique",
+      "b) Leur capacité à couvrir l’ensemble du spectre visible",
+      "c) Leur cohérence et monochromaticité",
+      "d) Leur faible intensité évitant l’excitation moléculaire",
+      "e) Leur dispersion dans un large spectre électromagnétique"
+    ],
+    "rightPropositions": [2],
+    "explanation": "Les lasers sont des sources cohérentes et monochromatiques, idéales pour de nombreuses applications spectroscopiques. (p.3)"
+  },
+  {
+    "question": "Quel domaine spectral est principalement utilisé pour l’analyse des vibrations moléculaires?",
+    "options": [
+      "a) UV-Visible",
+      "b) Rayons X",
+      "c) Infrarouge",
+      "d) Micro-ondes",
+      "e) Ondes radio"
+    ],
+    "rightPropositions": [2],
+    "explanation": "L’analyse des vibrations moléculaires se fait principalement dans l’infrarouge. (p.3)"
+  },
+  {
+    "question": "Quelle différence fondamentale distingue la spectroscopie Raman de la spectroscopie infrarouge?",
+    "options": [
+      "a) La spectroscopie Raman repose sur une absorption totale de l’énergie lumineuse",
+      "b) La spectroscopie infrarouge ne dépend pas des changements de polarisabilité moléculaire",
+      "c) La spectroscopie Raman est basée sur la diffusion inélastique de la lumière",
+      "d) La spectroscopie infrarouge ne détecte que les vibrations asymétriques",
+      "e) La spectroscopie Raman utilise exclusivement des sources thermiques"
+    ],
+    "rightPropositions": [2],
+    "explanation": "La spectroscopie Raman repose sur la diffusion inélastique de la lumière, contrairement à la spectroscopie IR. (p.4)"
+  },
+  {
+    "question": "Quel phénomène caractérise un spectre d’émission atomique?",
+    "options": [
+      "a) Une absorption d’énergie entraînant des transitions vibrationnelles",
+      "b) Une émission de lumière suite à un retour à l’état fondamental",
+      "c) Une diffraction de la lumière sur un prisme optique",
+      "d) Une réflexion totale interne des ondes électromagnétiques",
+      "e) Une dispersion due aux interactions électron-noyau"
+    ],
+    "rightPropositions": [1],
+    "explanation": "Un spectre d’émission est produit lorsque les atomes excités reviennent à leur état fondamental en émettant de la lumière. (p.3)"
+  },
+  {
+    "question": "Pourquoi les spectres de fluorescence et de phosphorescence sont-ils qualifiés de spectres d’émission?",
+    "options": [
+      "a) Car ils impliquent l’absorption de lumière dans l’infrarouge",
+      "b) Car ils résultent de la relaxation d’un état excité avec émission de photons",
+      "c) Car ils nécessitent une source de chaleur pour exciter les électrons",
+      "d) Car ils sont détectables uniquement dans le domaine UV-Visible",
+      "e) Car ils impliquent uniquement des transitions rotationnelles"
+    ],
+    "rightPropositions": [1],
+    "explanation": "La fluorescence et la phosphorescence résultent de l’émission de lumière par des molécules excitées. (p.4)"
+  },
+  {
+    "question": "Quelle condition est nécessaire pour qu’une molécule puisse absorber une radiation électromagnétique?",
+    "options": [
+      "a) L’énergie du photon doit être inférieure à l’énergie de l’état excité",
+      "b) L’énergie du photon doit correspondre exactement à la différence entre deux niveaux d’énergie moléculaires",
+      "c) La molécule doit être chargée électriquement",
+      "d) La molécule doit être placée sous vide pour minimiser l’interférence",
+      "e) L’absorption ne peut se produire que dans l’ultraviolet et le visible"
+    ],
+    "rightPropositions": [1],
+    "explanation": "Une molécule absorbe une radiation si l’énergie du photon correspond exactement à la différence entre deux niveaux d’énergie. (p.3)"
+  },
+  {
+    "question": "Quel rôle joue un monochromateur dans un spectrophotomètre?",
+    "options": [
+      "a) Il amplifie l’intensité de la lumière absorbée",
+      "b) Il sélectionne une longueur d’onde spécifique à partir d’un spectre polychromatique",
+      "c) Il convertit la lumière en un signal électrique mesurable",
+      "d) Il maintient la température de l’échantillon constante",
+      "e) Il détecte les variations de fluorescence des molécules en solution"
+    ],
+    "rightPropositions": [1],
+    "explanation": "Un monochromateur sert à sélectionner une longueur d’onde spécifique d’un spectre polychromatique. (p.5)"
+  },
+  {
+    "question": "Quels types de transitions sont observés dans les spectres d’absorption moléculaire?",
+    "options": [
+      "a) Rotationnelles, vibrationnelles et électroniques",
+      "b) Rotationnelles uniquement",
+      "c) Électroniques uniquement",
+      "d) Phosphorescentes uniquement",
+      "e) Infra-sonores et ultra-sonores"
+    ],
+    "rightPropositions": [0],
+    "explanation": "Les spectres d’absorption moléculaire impliquent des transitions rotationnelles, vibrationnelles et électroniques. (p.4)"
+  }
+]

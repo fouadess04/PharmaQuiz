@@ -1,0 +1,146 @@
+[
+  {
+    "question": "Quels sont les principaux types de luminescence en fonction du mode d’excitation?",
+    "options": [
+      "a) Chimiluminescence",
+      "b) Thermoluminescence",
+      "c) Électroluminescence",
+      "d) Bioluminescence",
+      "e) Radioluminescence"
+    ],
+    "rightPropositions": [0, 1, 2, 3],
+    "explanation": "Les principaux types de luminescence sont la chimiluminescence (réaction chimique), la thermoluminescence (chaleur), l’électroluminescence (champ électrique) et la bioluminescence (réactions enzymatiques). (p.6)"
+  },
+  {
+    "question": "Quels processus interviennent dans la relaxation d’une molécule excitée?",
+    "options": [
+      "a) Relaxation vibrationnelle",
+      "b) Conversion interne",
+      "c) Fluorescence",
+      "d) Conversion intersystème",
+      "e) Photodissociation"
+    ],
+    "rightPropositions": [0, 1, 2, 3],
+    "explanation": "Les molécules excitées peuvent revenir à l’état fondamental par relaxation vibrationnelle, conversion interne, fluorescence ou conversion intersystème. (p.15)"
+  },
+  {
+    "question": "Quels sont les critères essentiels d’un bon fluorophore?",
+    "options": [
+      "a) Présence de plusieurs cycles aromatiques",
+      "b) Faible coefficient d’extinction molaire",
+      "c) Structure rigide",
+      "d) Absorption dans l’UV ou le visible",
+      "e) Rendement quantique élevé"
+    ],
+    "rightPropositions": [0, 2, 3, 4],
+    "explanation": "Un bon fluorophore contient des cycles aromatiques, a une structure rigide, absorbe dans l’UV-visible et présente un rendement quantique élevé. (p.24)"
+  },
+  {
+    "question": "Quels facteurs influencent l’intensité de fluorescence d’une molécule?",
+    "options": [
+      "a) La nature du solvant",
+      "b) La température",
+      "c) La concentration de l’échantillon",
+      "d) L’oxygène dissous",
+      "e) Le pH"
+    ],
+    "rightPropositions": [0, 1, 2, 3, 4],
+    "explanation": "Le solvant, la température, la concentration, l’oxygène dissous et le pH influencent l’intensité de fluorescence. (p.49-60)"
+  },
+  {
+    "question": "Pourquoi la fluorescence de certaines molécules diminue avec l’augmentation de la température?",
+    "options": [
+      "a) La température augmente la fréquence des collisions moléculaires",
+      "b) La température diminue l’absorption de lumière UV",
+      "c) La température favorise les processus de relaxation non radiatifs",
+      "d) L’augmentation de température convertit les molécules fluorescentes en phosphorescentes",
+      "e) La température réduit le rendement quantique de fluorescence"
+    ],
+    "rightPropositions": [0, 2, 4],
+    "explanation": "L’augmentation de température augmente les collisions et favorise la relaxation non radiative, réduisant ainsi la fluorescence. (p.53)"
+  },
+  {
+    "question": "Quelle est la principale différence entre fluorescence et phosphorescence?",
+    "options": [
+      "a) La fluorescence est plus rapide que la phosphorescence",
+      "b) La fluorescence implique une transition spin-permise, tandis que la phosphorescence implique une transition spin-interdite",
+      "c) La phosphorescence se produit uniquement à basse température",
+      "d) La fluorescence implique un état triplet, alors que la phosphorescence implique un état singulet",
+      "e) La phosphorescence est observable uniquement en milieu gazeux"
+    ],
+    "rightPropositions": [0, 1],
+    "explanation": "La fluorescence est rapide et spin-permise, tandis que la phosphorescence est plus lente et spin-interdite. (p.18)"
+  },
+  {
+    "question": "Quels éléments sont nécessaires dans un spectrofluorimètre?",
+    "options": [
+      "a) Une source lumineuse",
+      "b) Un monochromateur d’excitation",
+      "c) Une cuve adaptée",
+      "d) Un monochromateur d’émission",
+      "e) Un spectromètre de masse"
+    ],
+    "rightPropositions": [0, 1, 2, 3],
+    "explanation": "Un spectrofluorimètre comprend une source lumineuse, un monochromateur d’excitation et d’émission, ainsi qu’une cuve adaptée. (p.63)"
+  },
+  {
+    "question": "Pourquoi les solvants polaires influencent-ils la fluorescence?",
+    "options": [
+      "a) Ils stabilisent les états excités et modifient la longueur d’onde d’émission",
+      "b) Ils augmentent toujours l’intensité de fluorescence",
+      "c) Ils favorisent la relaxation non radiative",
+      "d) Ils empêchent les transitions électroniques π → π*",
+      "e) Ils interagissent avec les fluorophores par solvatation"
+    ],
+    "rightPropositions": [0, 2, 4],
+    "explanation": "Les solvants polaires modifient la fluorescence en stabilisant les états excités et en favorisant la relaxation non radiative. (p.49)"
+  },
+  {
+    "question": "Quelles techniques analytiques utilisent la spectrofluorimétrie?",
+    "options": [
+      "a) Chromatographie sur couche mince (CCM)",
+      "b) Chromatographie liquide haute performance (CLHP)",
+      "c) Spectrométrie de masse",
+      "d) Dosage des médicaments",
+      "e) Études environnementales"
+    ],
+    "rightPropositions": [0, 1, 3, 4],
+    "explanation": "La spectrofluorimétrie est utilisée en CCM, CLHP, dosage de médicaments et études environnementales. (p.75)"
+  },
+  {
+    "question": "Pourquoi la concentration excessive d’un échantillon peut-elle fausser la mesure de fluorescence?",
+    "options": [
+      "a) Elle cause un effet de filtre interne",
+      "b) Elle modifie la longueur d’onde d’émission",
+      "c) Elle entraîne une réabsorption de la lumière fluorescente",
+      "d) Elle augmente le bruit de fond du spectre",
+      "e) Elle amplifie les transitions électroniques intersystème"
+    ],
+    "rightPropositions": [0, 2, 3],
+    "explanation": "Une concentration excessive entraîne un effet de filtre interne et une réabsorption de la fluorescence, faussant la mesure. (p.54)"
+  },
+  {
+    "question": "Quels phénomènes peuvent provoquer l’extinction (quenching) de la fluorescence?",
+    "options": [
+      "a) Présence de cations métalliques",
+      "b) Inhibition par collision",
+      "c) Effet hyperchrome",
+      "d) Formation de complexes non fluorescents",
+      "e) Excitation prolongée par une source intense"
+    ],
+    "rightPropositions": [0, 1, 3, 4],
+    "explanation": "L’extinction de fluorescence peut être causée par des cations métalliques, des collisions, la formation de complexes et une excitation prolongée. (p.56)"
+  },
+  {
+    "question": "Quels facteurs influencent la durée de vie de fluorescence d’un fluorophore?",
+    "options": [
+      "a) La température",
+      "b) La polarité du solvant",
+      "c) La structure moléculaire",
+      "d) L’intensité de la lumière excitatrice",
+      "e) La présence de fluorophores voisins"
+    ],
+    "rightPropositions": [0, 1, 2, 4],
+    "explanation": "La durée de vie de fluorescence est influencée par la température, la polarité du solvant, la structure et la présence de fluorophores voisins. (p.46)"
+  }
+]

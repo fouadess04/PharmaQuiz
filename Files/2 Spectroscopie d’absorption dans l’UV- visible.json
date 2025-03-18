@@ -1,0 +1,242 @@
+[
+  {
+    "question": "Quels paramètres influencent directement l’absorbance mesurée en spectroscopie UV-Visible?",
+    "options": [
+      "a) La concentration de l’échantillon",
+      "b) L’épaisseur de la cuve",
+      "c) La température du solvant",
+      "d) L’intensité de la source lumineuse",
+      "e) La présence d’impuretés dans l’échantillon"
+    ],
+    "rightPropositions": [0, 1, 4],
+    "explanation": "L’absorbance est influencée par la concentration de l’échantillon, l’épaisseur de la cuve et la présence d’impuretés. (p.5)"
+  },
+  {
+    "question": "Pourquoi la loi de Beer-Lambert peut-elle devenir non linéaire?",
+    "options": [
+      "a) À cause d’interactions moléculaires dans des solutions concentrées",
+      "b) Si la lumière utilisée n’est pas monochromatique",
+      "c) Si l’échantillon est trop dilué",
+      "d) Si le solvant absorbe dans la même région que l’analyte",
+      "e) Si le détecteur est saturé par une trop forte intensité lumineuse"
+    ],
+    "rightPropositions": [0, 1, 3, 4],
+    "explanation": "Des interactions moléculaires, l’utilisation d’une lumière polychromatique, l’absorption du solvant et la saturation du détecteur peuvent rendre la loi de Beer-Lambert non linéaire. (p.5)"
+  },
+  {
+    "question": "Quels sont les principaux types de transitions électroniques en spectroscopie UV-Visible?",
+    "options": [
+      "a) π → π*",
+      "b) n → π*",
+      "c) d → d",
+      "d) σ → σ*",
+      "e) v → v (vibrationnelle)"
+    ],
+    "rightPropositions": [0, 1, 2, 3],
+    "explanation": "Les transitions électroniques observées en UV-Visible incluent π → π*, n → π*, d → d et σ → σ*. (p.7)"
+  },
+  {
+    "question": "Quels effets peuvent influencer la position et l’intensité d’une bande d’absorption UV-Visible?",
+    "options": [
+      "a) La conjugaison des doubles liaisons",
+      "b) L’effet bathochrome",
+      "c) L’effet hypsochrome",
+      "d) La concentration de l’échantillon",
+      "e) Le type de solvant utilisé"
+    ],
+    "rightPropositions": [0, 1, 2, 4],
+    "explanation": "La conjugaison des doubles liaisons, les effets bathochrome et hypsochrome ainsi que le solvant influencent l’absorption UV-Visible. (p.9)"
+  },
+  {
+    "question": "Quels rôles joue un monochromateur dans un spectrophotomètre?",
+    "options": [
+      "a) Sélectionner une longueur d’onde spécifique",
+      "b) Convertir la lumière en signal électrique",
+      "c) Filtrer la lumière parasite",
+      "d) Améliorer la résolution spectrale",
+      "e) Augmenter l’intensité de l’absorbance mesurée"
+    ],
+    "rightPropositions": [0, 2, 3],
+    "explanation": "Un monochromateur sélectionne une longueur d’onde, filtre la lumière parasite et améliore la résolution spectrale. (p.12)"
+  },
+  {
+    "question": "Pourquoi les solvants polaires influencent-ils les bandes d’absorption UV-Visible?",
+    "options": [
+      "a) Ils stabilisent les états électroniques par solvatation",
+      "b) Ils provoquent un effet bathochrome sur les transitions π → π*",
+      "c) Ils déplacent les transitions n → π* vers les courtes longueurs d’onde (effet hypsochrome)",
+      "d) Ils réduisent l’intensité d’absorption",
+      "e) Ils augmentent systématiquement la largeur des bandes"
+    ],
+    "rightPropositions": [0, 1, 2],
+    "explanation": "Les solvants polaires stabilisent les états électroniques, provoquent un effet bathochrome sur les transitions π → π* et un effet hypsochrome sur les transitions n → π*. (p.10)"
+  },
+  {
+    "question": "Quels types de détecteurs sont couramment utilisés en spectrophotométrie UV-Visible?",
+    "options": [
+      "a) Tube photomultiplicateur",
+      "b) Photodiode",
+      "c) Détecteur infrarouge",
+      "d) Barrette de diodes",
+      "e) Spectromètre de masse"
+    ],
+    "rightPropositions": [0, 1, 3],
+    "explanation": "Les tubes photomultiplicateurs, les photodiodes et les barrettes de diodes sont utilisés pour détecter les signaux en spectrophotométrie UV-Visible. (p.12)"
+  },
+  {
+    "question": "Quels sont les avantages des spectrophotomètres à double faisceau?",
+    "options": [
+      "a) Ils compensent les variations d’intensité de la source lumineuse",
+      "b) Ils éliminent complètement le bruit de fond",
+      "c) Ils permettent une comparaison en temps réel entre l’échantillon et la référence",
+      "d) Ils nécessitent une calibration plus fréquente",
+      "e) Ils mesurent simultanément plusieurs longueurs d’onde"
+    ],
+    "rightPropositions": [0, 2],
+    "explanation": "Les spectrophotomètres à double faisceau compensent les variations d’intensité lumineuse et permettent une comparaison en temps réel avec la référence. (p.14)"
+  },
+  {
+    "question": "Quels critères doivent être respectés pour mesurer correctement une absorbance?",
+    "options": [
+      "a) Utiliser une lumière monochromatique",
+      "b) Travailler avec des solutions diluées",
+      "c) Employer une cuve transparente dans le domaine spectral étudié",
+      "d) Utiliser un solvant absorbant fortement la lumière UV",
+      "e) Éviter les bulles et impuretés dans la cuve"
+    ],
+    "rightPropositions": [0, 1, 2, 4],
+    "explanation": "Pour obtenir une mesure précise, il faut utiliser une lumière monochromatique, travailler avec des solutions diluées, employer une cuve adaptée et éviter les impuretés. (p.15)"
+  },
+  {
+    "question": "Quels sont les principaux avantages de la spectrophotométrie dérivée?",
+    "options": [
+      "a) Amélioration de la résolution spectrale",
+      "b) Détection des faibles variations d’absorbance",
+      "c) Suppression des effets de diffusion de la lumière",
+      "d) Réduction des temps d’analyse",
+      "e) Augmentation de l’intensité de l’absorption"
+    ],
+    "rightPropositions": [0, 1, 2],
+    "explanation": "La spectrophotométrie dérivée améliore la résolution spectrale, détecte les faibles variations d’absorbance et réduit les interférences dues à la diffusion de la lumière. (p.16)"
+  },
+  {
+    "question": "Pourquoi la spectroscopie UV-Visible est-elle une méthode courante en laboratoire?",
+    "options": [
+      "a) Elle permet d’identifier avec précision toutes les molécules présentes dans un mélange complexe",
+      "b) Elle repose sur l’absorption des radiations par les molécules, ce qui permet d’obtenir des informations sur leurs structures électroniques",
+      "c) Elle utilise exclusivement les longueurs d’onde de l’infrarouge pour détecter les liaisons chimiques",
+      "d) Elle fonctionne uniquement avec des composés aromatiques",
+      "e) Elle est applicable uniquement aux solides cristallins"
+    ],
+    "rightPropositions": [1],
+    "explanation": "La spectroscopie UV-Visible est basée sur l’absorption des radiations par les molécules, fournissant des informations sur leurs structures électroniques. (p.1)"
+  },
+  {
+    "question": "Quelle est la principale condition pour l’application de la loi de Beer-Lambert?",
+    "options": [
+      "a) L’absorption doit être réalisée dans le domaine infrarouge",
+      "b) La solution doit être suffisamment diluée pour éviter des interactions entre les molécules absorbantes",
+      "c) L’absorption dépend uniquement de la nature du solvant utilisé",
+      "d) La loi ne s’applique qu’aux solutions solides en suspension",
+      "e) L’absorbance est indépendante de la concentration de l’échantillon"
+    ],
+    "rightPropositions": [1],
+    "explanation": "La loi de Beer-Lambert est valide pour des solutions suffisamment diluées afin d’éviter des interactions qui modifieraient les propriétés des molécules absorbantes. (p.3)"
+  },
+  {
+    "question": "Quel paramètre caractérise la position d’une bande d’absorption dans un spectre UV-Visible?",
+    "options": [
+      "a) L’épaisseur de la cuve utilisée",
+      "b) La longueur d’onde λmax à laquelle se produit la transition électronique",
+      "c) La concentration de l’échantillon",
+      "d) La température de la solution analysée",
+      "e) Le type de détecteur employé dans l’analyse"
+    ],
+    "rightPropositions": [1],
+    "explanation": "La position du maximum d’absorption correspond à la longueur d’onde λmax provoquant la transition électronique. (p.4)"
+  },
+  {
+    "question": "Comment l’effet bathochrome influence-t-il une bande d’absorption UV-Visible?",
+    "options": [
+      "a) Il entraîne un déplacement vers les courtes longueurs d’onde",
+      "b) Il diminue l’intensité d’absorption",
+      "c) Il provoque un déplacement vers des longueurs d’onde plus grandes",
+      "d) Il élimine les transitions électroniques interdites",
+      "e) Il est uniquement observé pour les transitions n → σ*"
+    ],
+    "rightPropositions": [2],
+    "explanation": "L’effet bathochrome entraîne un déplacement des bandes d’absorption vers les grandes longueurs d’onde. (p.6)"
+  },
+  {
+    "question": "Quels types de transitions électroniques sont les plus courants en spectroscopie UV-Visible?",
+    "options": [
+      "a) π → π*, n → π*, n → σ* et σ → σ*",
+      "b) d → d uniquement",
+      "c) Transitions rotationnelles et vibrationnelles",
+      "d) n → σ* uniquement",
+      "e) Absorption dans l’IR moyen"
+    ],
+    "rightPropositions": [0],
+    "explanation": "Les transitions électroniques UV-Vis courantes sont π → π*, n → π*, n → σ* et σ → σ*. (p.7)"
+  },
+  {
+    "question": "Pourquoi les complexes métalliques de transition sont-ils souvent colorés?",
+    "options": [
+      "a) À cause des transitions électroniques π → π*",
+      "b) En raison des transitions d → d dans leurs orbitales",
+      "c) Parce qu’ils absorbent uniquement dans l’infrarouge",
+      "d) Car ils ont des bandes de transition σ → σ* très intenses",
+      "e) Parce qu’ils n’absorbent pas de lumière visible"
+    ],
+    "rightPropositions": [1],
+    "explanation": "Les complexes des métaux de transition présentent des transitions d → d, responsables de leur coloration. (p.8)"
+  },
+  {
+    "question": "Quel effet produit une augmentation de la conjugaison sur une molécule organique?",
+    "options": [
+      "a) Une augmentation de l’énergie de transition",
+      "b) Une diminution de la longueur d’onde d’absorption",
+      "c) Un déplacement bathochrome de la bande d’absorption",
+      "d) Une diminution du coefficient d’extinction molaire",
+      "e) Une suppression de l’absorption UV"
+    ],
+    "rightPropositions": [2],
+    "explanation": "L’augmentation de la conjugaison entraîne un déplacement bathochrome, c’est-à-dire un décalage vers des longueurs d’onde plus grandes. (p.9)"
+  },
+  {
+    "question": "Pourquoi le solvant peut-il influencer la position des bandes d’absorption?",
+    "options": [
+      "a) Il modifie l’état fondamental et excité des molécules par solvatation",
+      "b) Il empêche les transitions électroniques π → π*",
+      "c) Il augmente systématiquement l’absorbance",
+      "d) Il a un effet uniquement dans les composés inorganiques",
+      "e) Il neutralise complètement l’absorption UV"
+    ],
+    "rightPropositions": [0],
+    "explanation": "Le solvant modifie l’état fondamental et excité des molécules par solvatation, influençant ainsi la position des bandes d’absorption. (p.10)"
+  },
+  {
+    "question": "Quelle est la fonction principale d’un monochromateur dans un spectrophotomètre UV-Vis?",
+    "options": [
+      "a) Amplifier l’intensité du signal lumineux",
+      "b) Sélectionner une longueur d’onde spécifique du spectre",
+      "c) Modifier la couleur de la lumière incidente",
+      "d) Diminuer l’absorbance de l’échantillon",
+      "e) Convertir la lumière en signal électrique"
+    ],
+    "rightPropositions": [1],
+    "explanation": "Le monochromateur sélectionne une longueur d’onde spécifique du spectre lumineux. (p.12)"
+  },
+  {
+    "question": "Pourquoi les lampes à deutérium sont-elles préférées pour les mesures UV?",
+    "options": [
+      "a) Elles couvrent un large spectre allant du visible à l’IR",
+      "b) Elles fournissent un rayonnement stable dans l’UV",
+      "c) Elles émettent un spectre monochromatique pur",
+      "d) Elles ne nécessitent pas de monochromateur",
+      "e) Elles sont exclusivement utilisées pour les solutions aqueuses"
+    ],
+    "rightPropositions": [1],
+    "explanation": "Les lampes à deutérium fournissent un rayonnement stable dans la région UV. (p.13)"
+  }
+]
