@@ -10,17 +10,16 @@
 </head>
 <body>
     <header>
-        <img src="https://i.postimg.cc/sXgP6fZq/pharma-solo.png" alt="PharmaQuiz Logo">
+        <img src="https://i.postimg.cc/sXgP6fZq/pharma-solo.png" alt="PharmaQuiz Logo" id="LOGO">
         <h1>PharmaQuiz</h1>
     </header>
     <main>
-        <h2 id="quiz-title">Quiz Time !</h2>
-        <div class="file-upload-container">
-            <label for="file-input" class="file-upload-label">Upload Quiz File</label>
-            <input type="file" id="file-input" accept="application/json">
+        <div class="quiz-selector" id="quiz-selector">
+            <!-- Buttons to select a quiz will be dynamically added here -->
         </div>
-        <button id="start-quiz" style="display:none;">Start Quiz</button>
-        <div id="quiz-container"></div>
+        <div class="quiz-container" id="quiz-container">
+            <!-- Quiz questions will be dynamically added here -->
+        </div>
         <button id="check-answers" style="display:none;">Check Answers</button>
         <button id="next-question" style="display:none;">Next Question</button>
     </main>
