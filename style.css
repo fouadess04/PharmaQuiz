@@ -1,11 +1,41 @@
 body {
     font-family: 'Lexend Deca', 'Red Hat Display', Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     background-color: #f0fff0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-h1 {
+header {
+    display: flex;
+    align-items: center;
+    background-color: #e0f7e0;
+    padding: 10px 20px;
+    border-bottom: 1px solid #c8e6c9;
+}
+header img {
+    height: 50px;
+    margin-right: 20px;
+}
+header h1 {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
     color: #2e7d32;
+    font-weight: 700;
+}
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #e0f7e0;
+    border-top: 1px solid #c8e6c9;
+    color: #2e7d32;
+    font-weight: 500;
 }
 .quiz-selector {
     margin-top: 20px;
@@ -24,7 +54,7 @@ h1 {
     font-size: 16px;
     font-weight: 600;
     transition: background 0.3s ease;
-    width: 200px;
+    width: auto;
     text-align: left;
 }
 .quiz-selector button:hover {
